@@ -1,11 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { BusinessService } from '../../shared/service/business.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-accounts-payable',
   templateUrl: './accounts-payable.component.html',
   styleUrl: './accounts-payable.component.css'
 })
-export class AccountsPayableComponent implements OnInit {
+export class AccountsPayableComponent {
   formAccountsPayable: FormGroup;
 
   constructor(
@@ -21,7 +22,7 @@ export class AccountsPayableComponent implements OnInit {
     });
   }
 
-  subenviarConta(){
+  enviarConta(){
     this.formAccountsPayable.markAllAsTouched();
     if(this.formAccountsPayable.valid ){
       const valores = this.formAccountsPayable.value;

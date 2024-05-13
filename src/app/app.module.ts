@@ -22,6 +22,7 @@ import {FormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 
 registerLocaleData(localePt);
@@ -46,7 +47,8 @@ registerLocaleData(localePt);
     FormsModule, 
     MatFormFieldModule, 
     MatInputModule,
-    MatButtonModule, MatDividerModule, MatIconModule
+    MatButtonModule, MatDividerModule, MatIconModule,
+    MatDatepickerModule
   ],
   providers: [
     BusinessService,
