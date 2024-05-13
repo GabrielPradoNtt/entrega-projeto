@@ -15,6 +15,10 @@ export class BusinessService {
   getAccountsPayable() {
     return this.httpClient.get(this.urlApi + 'contas-pagar');
   }
+  //  CHAMADA PARA PEGAR AS CONTAS A PAGAR
+  postAccountsPayable(acconts: { description: string; value: number; payer: string; dueDate: string; }) {
+    return this.httpClient.post(this.urlApi + 'contas-pagar', acconts);
+  }
 
   //  CHAMADA PARA PEGAR AS CONTAS A RECEBER
   getAccountsReceivable() {
