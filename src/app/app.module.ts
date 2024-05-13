@@ -18,7 +18,7 @@ import { ReportsComponent } from './pages/reports/reports.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
@@ -45,6 +45,7 @@ registerLocaleData(localePt);
     BaseChartDirective,
     SharedModule,
     FormsModule, 
+    ReactiveFormsModule,
     MatFormFieldModule, 
     MatInputModule,
     MatButtonModule, MatDividerModule, MatIconModule,

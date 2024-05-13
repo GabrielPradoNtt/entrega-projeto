@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject, map } from 'rxjs';
 
+export interface AccountsPayable { 
+  value: number; title: string; company: string; date: string; 
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +18,7 @@ export class BusinessService {
     return this.httpClient.get(this.urlApi + 'contas-pagar');
   }
   //  CHAMADA PARA PEGAR AS CONTAS A PAGAR
-  postAccountsPayable(acconts: { description: string; value: number; payer: string; dueDate: string; }) {
+  postAccountsPayable(acconts: AccountsPayable) {
     return this.httpClient.post(this.urlApi + 'contas-pagar', acconts);
   }
 

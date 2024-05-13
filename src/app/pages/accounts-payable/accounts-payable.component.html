@@ -2,30 +2,48 @@
     <h2>Contas a Pagar</h2>
 </div>
 <div class="row p-4 mb-5 justify-content-md-center">
-    <div formGroup="contasPagas" (ngSubmit)="enviarConta()">
-        <mat-form-field class="col-12">
-            <mat-label>DESCRIÇÃO</mat-label>
-            <input matInput formControlName="description">
-        </mat-form-field>
-        <mat-form-field class="col-12" floatLabel="always">
-            <mat-label>VALOR</mat-label>
-            <input matInput type="number" class="example-right-align" placeholder="0" formControlName="value">
-            <span matTextPrefix>R$&nbsp;</span>
-            <span matTextSuffix>.00</span>
-        </mat-form-field>
-        <mat-form-field class="col-12">
-            <mat-label>PAGADOR</mat-label>
-            <input matInput formControlName="payer">
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>DATA DE VENCIMENTO</mat-label>
-            <input matInput [matDatepicker]="picker">
-            <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-        <div class="col-12">
-            <button mat-button color="primary" type="submit">ENVIAR</button>
+    <div class="col-md-6 col-12">
+        <form [formGroup]="formAccountsPayable" (ngSubmit)="enviarConta()">
+            <mat-form-field class="col-12">
+                <mat-label>DESCRIÇÃO</mat-label>
+                <input matInput formControlName="title">
+            </mat-form-field>
+            <mat-form-field class="col-12" floatLabel="always">
+                <mat-label>VALOR</mat-label>
+                <input matInput type="number" class="example-right-align" placeholder="0" formControlName="value">
+                <span matTextPrefix>R$&nbsp;</span>
+                <span matTextSuffix>.00</span>
+            </mat-form-field>
+            <mat-form-field class="col-12">
+                <mat-label>PAGADOR</mat-label>
+                <input matInput formControlName="company">
+            </mat-form-field>
+            <mat-form-field class="col-12">
+                <mat-label>DATA DE VENCIMENTO</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="date">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <div class="col-12">
+                <div class="row justify-content-end">
+                    <button mat-button color="primary" type="submit" class="col-3">ENVIAR</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6 col-12">
+        <div class="row">
+            <div class="col-3">DESCRIÇÃO</div>
+            <div class="col-3">VALOR</div>
+            <div class="col-3">PAGADOR</div>
+            <div class="col-3">DATA DE VENCIMENTO</div>
+        </div>
+        <div class="row" *ngFor="let accounts of ListAccountsPayable" >
+            <div class="col-3">{{accounts.title}}</div>
+            <div class="col-3">{{accounts.value}}</div>
+            <div class="col-3">{{[accounts.company]}}</div>
+            <div class="col-3">{{[accounts.date | date: 'dd / MM / yyyy']}}</div>
         </div>
     </div>
 </div>
