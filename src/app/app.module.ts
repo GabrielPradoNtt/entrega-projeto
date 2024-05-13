@@ -16,6 +16,13 @@ import { AccountsReceivableComponent } from './pages/accounts-receivable/account
 import { PeopleComponent } from './pages/people/people.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 
 registerLocaleData(localePt);
@@ -37,6 +44,12 @@ registerLocaleData(localePt);
     AppRoutingModule,
     BaseChartDirective,
     SharedModule,
+    FormsModule, 
+    ReactiveFormsModule,
+    MatFormFieldModule, 
+    MatInputModule,
+    MatButtonModule, MatDividerModule, MatIconModule,
+    MatDatepickerModule
   ],
   providers: [
     BusinessService,
